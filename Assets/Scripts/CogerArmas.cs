@@ -14,7 +14,10 @@ public class CogerArmas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            DesactivarArmas();
+        }
     }
 
     public void ActivarArmar(int numero)
@@ -24,5 +27,13 @@ public class CogerArmas : MonoBehaviour
             armas[i].SetActive(false);
         }
         armas[numero].SetActive(true);
+    }
+
+    public void DesactivarArmas()
+    {
+        for (int i = 0; i < armas.Length; i++)
+        {
+            armas[i].SetActive(false);
+        }
     }
 }
